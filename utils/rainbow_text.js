@@ -49,10 +49,14 @@ export function colorize(text, { hue = 0, scale = 1, compress = false } = {}) {
   let out = "";
   for (let i = 0; i < text.length; i++) {
     const char = text[i];
-    out += `{#${rgb2hex(
+    if (!char.trim()) {
+      out += char;
+      continue;
+    }
+    out += `[#${rgb2hex(
       hsl2rgb((i + hue) * 40 * scale, 1, 0.7),
       compress
-    )}}${char}`;
+    )}]${char}`;
   }
   return out;
 }
