@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>nevula utils</title>
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/normalize.css@8.0.1/normalize.css"
+/>
+<link rel="stylesheet" href="/style.css" />
+<script type="module" src="/script.js"></script>
+<link
+  href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap"
+  rel="stylesheet"
+/>
+
+<button class="toggle-options" title="toggle-options">🔧</button>
+<main>
+  <h1><rainbow-text>Rainbow</rainbow-text> colorize text</h1>
+  <article>
+    <label>Input:</label>
+    <textarea>Rainbow text!</textarea>
+  </article>
+  <article>
+    <label>Output:</label>
+    <ul class="options">
+      <li
+        class="option"
+        title="if the color codes for the output should be shortened to reduce text size."
+      >
+        <label for="shorten_output">shorten_output:</label>
+        <input
+          type="checkbox"
+          name="shorten_output"
+          checked
+          id="shorten_output"
+        />
+      </li>
+      <li
+        class="option"
+        title="if the output should be in html instead of nevula's color markup format."
+      >
+        <label for="output_html">output_html:</label>
+        <input
+          type="checkbox"
+          name="output_html"
+          id="output_html"
+        />
+      </li>
+      <li
+        class="option"
+        title="Rotate the hue a specified amount."
+      >
+        <label for="rotate_hue">rotate_hue:</label>
+        <output for="rotate_hue" id="rotate_hue_output">0</output>
+        <input
+          type="range"
+          name="rotate_hue"
+          min="0" max="255"
+          value="0"
+          id="rotate_hue"
+        />
+      </li>
+      <li
+        class="option"
+        title="How far apart colors are."
+      >
+        <label for="hue_scale">hue_scale:</label>
+        <output for="hue_scale" id="hue_scale_output">1</output>
+        <input
+          type="range"
+          name="hue_scale"
+          min="0.5" max="10"
+          value="1"
+          step="any"
+          id="hue_scale"
+        />
+      </li>
+    </ul>
+    <output class="output"><textarea></textarea></output>
+  </article>
+  <article>
+    <label>Preview:</label><br />
+    <output class="preview"></output>
+  </article>
+</main>
